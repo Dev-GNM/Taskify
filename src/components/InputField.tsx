@@ -1,7 +1,15 @@
 import React from 'react'
 import "./styles.css";
 
-const InputField = () => {
+interface Props {
+  todo: string;
+  setTodo:  React.Dispatch<React.SetStateAction<string>>;
+}
+
+
+const InputField = ( {todo, setTodo }: Props) => {
+
+
   return (
     <form className="form">
         <input type="input" placeholder="Enter task name" className='input_box'/>
