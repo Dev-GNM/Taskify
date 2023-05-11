@@ -33,16 +33,26 @@ const handleDelete = (id: number) => {
 
   return (
     <form className='todos_single'>
-        {
-            todo.isDone ? (
+        { edit ? (
+            <input 
+            value={editTodo} 
+            onChange={(e) => setEditTodo(e.target.value)} 
+            className='todos_single--text'
+            
+            />
+        ): todo.isDone ? (
                 <s className="todos_single--text">{todo.todo}</s>
             ): (
                 <span className="todos_single--text">{todo.todo}</span>
             )}
       
-
             <div>
-                <span className="icon">
+                <span className="icon" onClick={ () => {
+                   if (!edit && !todo.isDone) {
+                    setEdit(!edit);
+                   }
+                }}
+                >
                     <AiFillEdit />
                 </span>
                 <span className="icon" onClick={() => handleDelete(todo.id)}>
