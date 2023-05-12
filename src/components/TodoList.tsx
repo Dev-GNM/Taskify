@@ -25,9 +25,10 @@ interface Props{
            setTodos={setTodos}
             />
         ))}
-       </div>
+      </div>
 
-       <div className="todos_remove">
+       <div className="todos">
+        <div className="todos_remove">
        <span className="todos_heading">
             Completed Tasks
         </span>
@@ -40,6 +41,8 @@ interface Props{
             />
         ))}
        </div>
+       </div>
+       
     </div>
  ); 
 };
