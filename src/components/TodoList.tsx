@@ -11,7 +11,12 @@ interface Props{
 
  const TodoList: React.FC<Props> = ({ todos, setTodos }: Props) => {
   return (
-    <div className='todos'>
+ 
+    <div className="container">
+       <div className="todos">
+        <span className="todos_heading">
+            Active Tasks
+        </span>
         {todos.map((todo) => (
            <SingleTodo 
            todo={todo} 
@@ -20,7 +25,13 @@ interface Props{
            setTodos={setTodos}
             />
         ))}
-    
+
+       </div>
+       <div className="todos_remove">
+
+       </div>
+
+
     </div>
  ); 
 };
