@@ -25,15 +25,25 @@ interface Props{
            setTodos={setTodos}
             />
         ))}
-
        </div>
+
        <div className="todos_remove">
-
+       <span className="todos_heading">
+            Completed Tasks
+        </span>
+        {todos.map((todo) => (
+           <SingleTodo 
+           todo={todo} 
+           key={todo.id}
+           todos={todos}
+           setTodos={setTodos}
+            />
+        ))}
        </div>
-
-
     </div>
  ); 
 };
 
 export default TodoList;
+
+
